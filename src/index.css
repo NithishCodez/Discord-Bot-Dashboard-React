@@ -1,5 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 
 
-div.app{
-  min-height: 100vh;
+.App-Hero{
+    height: 40vh;
+}
+
+.Hero-Title{
+    color: white;
+    font-size: 3vmax;
+    font-family: Krona One;
 }

@@ -1,30 +1,57 @@
-import { Image, Button } from 'semantic-ui-react'
+import { Navbar, Nav, Image, Button } from "react-bootstrap";
+import { FaDiscord } from "react-icons/fa";
 
 function App() {
   return (
-    <>
-    <div className="app">
-    <div className="heading" style={styles.heading}>
-    <Image src='https://cdn.discordapp.com/avatars/769841844795867137/4ca702264831d1158c5c4d4643dbbaa8.png?size=1024' size='small' circular centered={true}/>
-    <h1 style={{color: 'white', marginTop: '2%', fontSize: '35px', fontFamily: 'monospace'}}>Discord Bot Dashboard</h1>
-    <Button inverted color='orange' style={styles.button} onClick={() => {alert('You clicked invite')}}>Invite</Button>&nbsp; &nbsp; &nbsp;
-    <Button inverted style={styles.button} onClick={() => {alert('You clicked Dashboard')}}>Dashboard</Button>
+    <div className={"App-Main"}>
+      <div className={"Navbar"}>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Navbar.Brand href="#home">
+            <span style={{ fontFamily: "Balsamiq Sans" }}>Dashboard</span>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link>
+                <span style={{ fontFamily: "Krona One" }}>Home</span>
+              </Nav.Link>
+              <Nav.Link>
+                <span style={{ fontFamily: "Krona One" }}>Dashboard</span>
+              </Nav.Link>
+            </Nav>
+            <Nav>
+              <Nav.Link>
+                <span style={{ fontFamily: "Krona One" }}>
+                  Sign In &nbsp; <FaDiscord />{" "}
+                </span>
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </div>
+      <div className={"App-Hero"}>
+        <p align="center" style={{paddingTop: "70px"}}>
+        <Image height={150} draggable={false} className={"Hero-Img"} src="https://cdn.discordapp.com/avatars/769841844795867137/81de51c0cfcb9881873f4df33636cccf.png?size=128" roundedCircle/>
+        </p>
+        <p align="center">
+        <span className={"Hero-Title"}>Musix v2</span>
+        </p>
+        <p align="center">
+          <Button>
+            <span style={{fontFamily: "Balsamiq Sans"}}>
+            Invite Me
+            </span>
+          </Button>
+          &nbsp; &nbsp; &nbsp;
+          <Button variant="danger">
+            <span style={{fontFamily: "Balsamiq Sans"}}>
+            Dashboard
+            </span>
+          </Button>
+        </p>
+      </div>
     </div>
-    </div>
-    </>
   );
-}
-
-const styles = {
-  heading: {
-  alignItems: 'center',
-  justifyContent: 'center',
-  textAlign: 'center',
-  marginTop: '10%',
-  },
-  button: {
-    marginTop: '3vh'
-  }
 }
 
 export default App;
